@@ -1,0 +1,9 @@
+<h1>Post id: {{ postState.entity?.post.id }}</h1>
+<p>
+  {{ postState.entity?.post.title }}
+</p>
+<like></like>
+<div *ngIf="postState.isLiked"> Me gusta</div>
+<div *ngIf="!postState.isLiked">
+<button (click)="delete()">DELETE {{ postState.entity?.post.id }}</button>
+</div>

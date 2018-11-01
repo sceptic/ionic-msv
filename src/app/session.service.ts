@@ -1,0 +1,16 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SessionService {
+
+  user;
+
+  constructor() {}
+
+  load() {}
+
+  save() {}
+
+}

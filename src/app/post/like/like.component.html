@@ -1,0 +1,8 @@
+<div *ngIf="postState.isLiked">
+  <button (click)="postState.like()">Me gusta</button>
+</div>
+
+<div *ngIf="!postState.isLiked">
+  <button (click)="postState.like()">No me gusta</button>
+</div>
+  
