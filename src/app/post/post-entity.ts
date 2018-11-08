@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PostRepository } from './post-repository';
-
-interface IPost {
-  id: string;
-  title: string;
-  likes: {};
-}
+import { IPost } from './IPost';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +22,8 @@ export class PostEntity {
   }
 
   removeLike() {}
+
   addBookmark() {}
+
+  save() {}
 }
