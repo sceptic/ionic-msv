@@ -8,6 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PostCollection } from './post/post-collection';
+import { PostRepository } from './post/post-repository';
+import { Store } from './store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +19,10 @@ import { AppComponent } from './app.component';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    PostCollection,
+    PostRepository,
+    Store
   ],
   bootstrap: [AppComponent]
 })

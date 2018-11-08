@@ -5,6 +5,7 @@ import { PostRepository } from './post-repository';
   providedIn: 'root'
 })
 export class PostCollection {
+
     list: PostEntity[];
 
     constructor(public postRepository: PostRepository) {}
@@ -22,6 +23,6 @@ export class PostCollection {
 
     delete(postId: string) {
         alert(postId);
-        this.list = this.list.filter(item => item.post.id !== postId);
+        this.list = this.list.filter(item => item.data.id !== postId);
     }
 }

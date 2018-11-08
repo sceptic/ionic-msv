@@ -5,9 +5,9 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngFor="let post of postCollection.list">
-    <h1>{{post.post.title}}</h1>
-    <post [post]="post" ></post>
+  <div *ngFor="let postEntity of store.postCollection.list">
+    <h1>{{postEntity.data.title}}</h1>
+    <post [post]="postEntity" ></post>
     <hr>
   </div>
 </ion-content>

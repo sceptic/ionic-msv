@@ -6,14 +6,19 @@ import { PostEntity } from './post-entity';
 })
 export class PostState {
 
-  isLiked: boolean;
   entity: PostEntity;
+  isLiked: boolean;
+  isBookmark: boolean;
 
   constructor() {}
 
   like() {
-    if (this.entity.addLike()) {
-      this.isLiked = true;
-    }
+    this.entity.addLike();
+    this.isLiked = true;
+  }
+
+  unlike() {
+    this.entity.removeLike();
+    this.isLiked = false;
   }
 }

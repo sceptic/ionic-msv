@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { PostRepository } from './post-repository';
 
+interface IPost {
+  id: string;
+  title: string;
+  likes: {};
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,19 +14,18 @@ export class PostEntity {
 
   constructor(private postRepository: PostRepository) {}
 
-  post: {id, title: string, likes: {}};
+  data: IPost;
 
   load(post) {
-    this.post = post;
+    this.data = post;
     return this;
   }
 
   addLike() {
-    this.post = this.postRepository.addLike(this.post.id);
+    this.data = this.postRepository.addLike(this.data.id);
     return true;
   }
 
   removeLike() {}
-
   addBookmark() {}
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PostCollection } from '../post/post-collection';
+import { Store } from '../store';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,6 @@ import { PostCollection } from '../post/post-collection';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private postCollection: PostCollection) {}
+  constructor(public store: Store) {}
 }
 

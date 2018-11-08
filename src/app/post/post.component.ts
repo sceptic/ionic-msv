@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PostState } from './post-state';
 import { PostEntity } from './post-entity';
-import { PostCollection } from './post-collection';
+import { Store } from '../store';
 
 @Component({
   selector: 'post',
@@ -13,7 +13,7 @@ export class PostComponent implements OnInit {
 
   @Input() post: PostEntity;
   constructor(
-    private postCollection: PostCollection,
+    private store: Store,
     public postState: PostState) {
   }
 
@@ -22,6 +22,6 @@ export class PostComponent implements OnInit {
   }
 
   delete() {
-    this.postCollection.delete(this.post.post.id);
+    this.store.postCollection.delete(this.post.data.id);
   }
 }
